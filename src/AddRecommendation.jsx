@@ -28,6 +28,18 @@ function AddRecommendation({ user, editingRec, onClose, onAdded }) {
       setIsPublic(editingRec.is_public)
       setIsWishlist(editingRec.is_wishlist || false)
       setSelectedItem(null)
+      setSearchResults([])
+    } else {
+      // Reset form when not editing (adding new)
+      setCategory('movie')
+      setTitle('')
+      setSearchQuery('')
+      setRating(0)
+      setNote('')
+      setIsPublic(true)
+      setIsWishlist(false)
+      setSelectedItem(null)
+      setSearchResults([])
     }
   }, [editingRec])
 

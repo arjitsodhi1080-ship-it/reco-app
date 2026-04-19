@@ -1,4 +1,5 @@
 .friend-profile-container {
+  min-height: calc(100vh - 84px - 60px);
   padding: 20px;
   padding-bottom: 100px;
   animation: fadeIn 0.3s ease;
