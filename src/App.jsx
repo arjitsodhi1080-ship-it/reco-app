@@ -46,16 +46,12 @@ function App() {
   const handleSignUp = async (e) => {
   e.preventDefault()
 
-  console.log("EMAIL:", email)
-  console.log("PASSWORD:", password)
 
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
   })
 
-  console.log("DATA:", data)
-  console.log("ERROR:", error)
 }
 
   const handleSignIn = async (e) => {
