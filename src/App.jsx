@@ -38,16 +38,10 @@ function App() {
     return () => subscription.unsubscribe()
   }, [])
 
-  const loadProfile = async (userId) => {
-    const { data } = await supabase
-      .from('profiles')
-      .select('*')
-      .eq('id', userId)
-      .single()
+  const handleSignUp = async (e) => {
+  e.preventDefault()
 
-    setProfile(data)
-    setLoading(false)
-  }
+  alert(`Email: ${email} Password length: ${password.length}`)
 
   const handleSignUp = async (e) => {
   e.preventDefault()
