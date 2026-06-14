@@ -50,22 +50,19 @@ function App() {
   }
 
   const handleSignUp = async (e) => {
-    e.preventDefault()
-    setAuthLoading(true)
-    setMessage('')
+  e.preventDefault()
 
-    const { error } = await supabase.auth.signUp({
-      email,
-      password,
-    })
+  console.log("EMAIL:", email)
+  console.log("PASSWORD:", password)
 
-    if (error) {
-      setMessage(error.message)
-    } else {
-      setMessage('Check your email for the confirmation link!')
-    }
-    setAuthLoading(false)
-  }
+  const { data, error } = await supabase.auth.signUp({
+    email,
+    password,
+  })
+
+  console.log("DATA:", data)
+  console.log("ERROR:", error)
+}
 
   const handleSignIn = async (e) => {
     e.preventDefault()
